@@ -27,6 +27,12 @@ const sponsors = [
     logo: '/logo/cair_logo.png',
     link: 'https://www.mun.ca/research/cair/',
   },
+  {
+    id: 'colab',
+    name: 'COLAB',
+    logo: '/logo/colab_logo.png',
+    link: 'https://www.colabsoftware.com',
+  },
 ];
 
 const advisors = [
