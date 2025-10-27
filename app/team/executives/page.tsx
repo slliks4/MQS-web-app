@@ -86,7 +86,7 @@ const executiveMember = [
     name: "Kaan Keskindi",
     role: "Co-Director - Data and Infrastructure",
     linkedin: "https://www.linkedin.com/in/kaan-keskindil-46a13b256/",
-    bio: "This is Kaan's bio: Hi, I’m Kaan, a second year electrical engineering student at MUN.  I like trading and I like cats !!",
+    bio: "Hi, I’m Kaan, a second year electrical engineering student at MUN. I like trading and I like cats!!",
     image: "/headshots/kaan.jpg",
   },
   {
