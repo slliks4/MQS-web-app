@@ -747,6 +747,11 @@ header {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+.teamCard small.long-bio {
+  font-size: clamp(0.7rem, 3vw, 0.8rem);
+  line-height: 2;
+  display: inline-block;
+}
 @media (max-width: 1000px) {
   .techTeamsGrid {
     padding: 5vh 0;

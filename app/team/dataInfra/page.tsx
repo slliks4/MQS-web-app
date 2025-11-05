@@ -29,21 +29,24 @@ function DirectorCard({ member }) {
         <div className="center">
           <h3>{member.name}</h3>
           <p>{member.role}</p>
-<p>
-                      <br />
-                      <small>{member.bio}</small>
-                    </p> <br />
-                    {member.linkedin && member.linkedin !== "#" ? (
-                      <a
-                        href={member.linkedin}
-                        className="profile-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        LinkedIn
-                      </a>
-                    ) : (
-                      <p className="no-link-text">LinkedIn profile not available</p>)}
+          <p>
+            <br />
+            <small className={member.bio.length > 300 ? "long-bio" : ""}>
+              {member.bio}
+            </small>
+          </p>
+          <br />
+          {member.linkedin && member.linkedin !== "#" ? (
+            <a
+              href={member.linkedin}
+              className="profile-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          ) : (
+            <p className="no-link-text">LinkedIn profile not available</p>)}
         </div>
       </div>
     </div>
@@ -134,7 +137,7 @@ export default function DataInfrastructurePage() {
             </section>
           )}
           {/* Section for Other Members */}
-          {otherMembers.length > 0 && (
+          {/* {otherMembers.length > 0 && (
             <section className="other-members-section">
               <h1>Team Members</h1>
               <div className="other-members-list">
@@ -144,7 +147,7 @@ export default function DataInfrastructurePage() {
                 ))}
               </div>
             </section>
-          )}
+          )} */}
         </div>
       </main>
     </>

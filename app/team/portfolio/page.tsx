@@ -18,7 +18,9 @@ function DirectorCard({ member }: { member: typeof portfolioMember[0] }) {
           <p>{member.role}</p>
           <p>
             <br />
-            <small>{member.bio}</small>
+            <small className={member.bio.length > 300 ? "long-bio" : ""}>
+              {member.bio}
+            </small>
           </p> <br />
           {member.linkedin && member.linkedin !== "#" ? (
             <a
@@ -102,7 +104,7 @@ export default function PortfolioPage() {
               ))}
             </section>
           )}
-          {otherMembers.length > 0 && (
+          {/* {otherMembers.length > 0 && (
             <section className="other-members-section">
               <h1>Team Members</h1>
               <div className="other-members-list">
@@ -111,7 +113,7 @@ export default function PortfolioPage() {
                 ))}
               </div>
             </section>
-          )}
+          )} */}
         </div>
       </main>
     </>

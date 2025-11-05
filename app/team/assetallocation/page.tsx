@@ -19,8 +19,12 @@ function DirectorCard({ member }) {
         <div className="center">
           <h3>{member.name}</h3>
           <p>{member.role}</p>
-          <br />
-          <small>{member.bio}</small>
+          <p>
+            <br />
+            <small className={member.bio.length > 300 ? "long-bio" : ""}>
+              {member.bio}
+            </small>
+          </p>
           <br />
           {member.linkedin && member.linkedin !== "#" ? (
             <a href={member.linkedin} className="profile-link" target="_blank" rel="noopener noreferrer">
@@ -94,7 +98,7 @@ export default function AssetAllocationPage() {
               ))}
             </section>
           )}
-          {otherMembers.length > 0 && (
+          {/* {otherMembers.length > 0 && (
             <section className="other-members-section">
               <h1>Team Members</h1>
               <div className="other-members-list">
@@ -103,7 +107,7 @@ export default function AssetAllocationPage() {
                 ))}
               </div>
             </section>
-          )}
+          )} */}
         </div>
       </main>
     </>

@@ -16,14 +16,14 @@ const executiveMember = [
     role: "VP Admin",
     linkedin: "https://www.linkedin.com ",
     bio: "My name is Ian, I am a CS student at MUN. I have a Bachelor's degree in Philosophy (Maj.) and Classics (Min.). I have served as an officer with the Royal Canadian Navy. Apart from finance my interests include world history and strategy games.",
-    image: "/headshots/ian.jpg",
+    image: "/headshots/ian2.png",
   },
   {
     name: "Aaron Crane",
     role: "Co-VP",
     linkedin: "https://www.linkedin.com/in/aaroncranee/",
     bio: "I’m a third-year Computer Engineering major with an interest in low-level programming and hardware systems. I enjoy working with C, Assembly, and direct hardware tools. In my freetime, I train and compete as a powerlifter.",
-    image: "/headshots/aaron.jpg",
+    image: "/headshots/aaron2.jpg",
   },
   {
     name: "Ayesha Ziauddin",
@@ -69,7 +69,7 @@ const executiveMember = [
   },
   {
     name: "Mpundu Chikoya",
-    role: "Co-Director - Asset and Allocation",
+    role: "Co-Director - Asset Allocation",
     linkedin: "https://www.linkedin.com/in/mpundu-chikoya-bb5aa2258/ ", // Placeholder Link
     bio: "I am a 3rd year Applied Math and Economics major. I have interests in risk management and analysis. For fun, I like to bake and swim.",
     image: "/headshots/mpundu.jpg", // Placeholder Image
@@ -94,7 +94,7 @@ const executiveMember = [
     role: "Co-Director - Portfolio",
     linkedin: "https://www.linkedin.com/in/nikolaseche",
     bio: "I’m a Master student in Computer Engineering at MUN. I’m currently pursuing research in Molecular Engineering for real-world scientific and quantitative challenges",
-    image: "",
+    image: "/headshots/nick.jpg",
   },
   {
     name: "William Church",
@@ -107,8 +107,8 @@ const executiveMember = [
     name: "Suryan",
     role: "Co-Director - Asset Allocation",
     linkedin: "https://www.linkedin.com/in/suryan-576a7b244/",
-    bio: "",
-    image: "",
+    bio: "I’m a third-year commerce student with a minor in economics at Memorial University. I have experience in marketing and the hospitality industry and am passionate about finance, physics, and curious about how things work. I am also a freestyle dancer with an interest in fashion and music. I value growth, balance, and figuring things out one step at a time.",
+    image: "/headshots/suryan.jpg",
   },
 ];
 
@@ -166,7 +166,9 @@ export default function TeamsPage() {
                     <p>{team.role}</p>
                     <p>
                       <br />
-                      <small>{team.bio}</small>
+                      <small className={team.bio.length > 300 ? "long-bio" : ""}>
+                        {team.bio}
+                      </small>
                     </p>
                     <br />
                     {team.linkedin && team.linkedin !== "#" ? (
