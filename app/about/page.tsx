@@ -51,12 +51,6 @@ const sponsors = [
         logo: '/logo/enaimco-logo.svg',
         link: 'https://www.enaimco.com/',
     },
-    {
-        id: 'leGrow',
-        name: 'LeGrows Travel',
-        logo: '/logo/LeGrows-Travel-Logo-White.png',
-        link: 'https://www.legrowstravel.ca/',
-    },
 ];
 
 const advisors = [
