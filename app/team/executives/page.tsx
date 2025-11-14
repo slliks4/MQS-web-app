@@ -49,6 +49,14 @@ const executiveMember = [
     bio: "My name is Rimsha, I am a third year Commerce student at MUN. I like learning about all things business. When I am not studying or working, I enjoy baking and watching movies.",
     image: "/headshots/rimsha.JPG",
   },
+  // External Relations
+  {
+    name: "William Church",
+    role: "Director - External Relations",
+    linkedin: "https://www.linkedin.com/in/church-william/ ",
+    bio: "I am William, a fourth year Geography student with a passion for economic development, data analysis and visualization. At MQS, I focus on building connections with industry leaders to create opportunities for growth. ",
+    image: "/headshots/church.jpg",
+  },
   // Portfolio
   {
     name: "Keegan Churchill",
@@ -107,14 +115,6 @@ const executiveMember = [
     linkedin: "https://www.linkedin.com/in/kaan-keskindil-46a13b256/",
     bio: "Hi, I'm Kaan, a second year electrical engineering student at MUN. I like trading and I like cats!!",
     image: "/headshots/kaan.jpg",
-  },
-  // External Relations
-  {
-    name: "William Church",
-    role: "Director - External Relations",
-    linkedin: "https://www.linkedin.com/in/church-william/ ",
-    bio: "I am William, a fourth year Geography student with a passion for economic development, data analysis and visualization. At MQS, I focus on building connections with industry leaders to create opportunities for growth. ",
-    image: "/headshots/church.jpg",
   },
 ];
 
