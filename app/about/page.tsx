@@ -40,12 +40,6 @@ const sponsors = [
         link: 'https://www.ryco.ca/',
     },
     {
-        id: 'First Atlantic',
-        name: 'First Atlantic Private Wealth',
-        logo: '/logo/first-atlantic.svg',
-        link: 'https://www.firstatlantic.ca/',
-    },
-    {
         id: 'enaimco',
         name: 'enaimco',
         logo: '/logo/enaimco-logo.svg',
