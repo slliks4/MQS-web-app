@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import TeamsDropdown from '@/app/teamsDropdown';
 import Image from 'next/image';
 
 export default function Navbar() {
@@ -64,7 +63,7 @@ export default function Navbar() {
         {/* normal pc screen */}
         <nav ref={navRef} className="nav hidden md:flex space-x-6 text-white">
           <Link href="/about" className="nav-link">ABOUT</Link>
-          <TeamsDropdown onCloseMenu={() => {}} />
+          <Link href="/team/executives" className="nav-link"> TEAM </Link>
           <Link href="/articles" className="nav-link">PROJECTS</Link>
           <Link href="/events" className="nav-link">EVENTS</Link>
           <a
@@ -85,7 +84,7 @@ export default function Navbar() {
           className="mobile-nav-open md:hidden"
         >
           <Link href="/about" className="nav-link block" onClick={() => handleNavLinkClick('/about')}>ABOUT</Link>
-          <TeamsDropdown onCloseMenu={toggleMobileMenu} />
+          <Link href="/team/executives" className="nav-link block" onClick={() => handleNavLinkClick('/team/executives')}> TEAM </Link>
           <Link href="/articles" className="nav-link block" onClick={() => handleNavLinkClick('/articles')}>PROJECTS</Link>
           <Link href="/events" className="nav-link block" onClick={() => handleNavLinkClick('/events')}>EVENTS</Link>
           <a

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const executiveMember = [
   // Executive Leadership
-  {
+   {
     name: "Joshua Kattapuram",
     role: "President",
     linkedin: "https://www.linkedin.com/in/joshua-kattapuram/ ",
