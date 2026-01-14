@@ -1,101 +1,35 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { initialContent } from '@/components/ui/toggleItems/toggleItemTypes';
 import Image from 'next/image';
 import './style.css';
+import {
+  HERO_VIDEO_SRC,
+  JOIN_FORM_URL,
+  METABASE_URL,
+  animatedTextLines,
+  sponsors,
+  advisors,
+  panels,
+} from '@/lib/aboutConsts';
 
-const animatedTextLines = [
-    'MQS is a student team at Memorial University',
-    'aiming to provide a quality education in',
-    'financial markets and algorithm development.',
-    '\n',
-    'We enable students to learn the',
-    'fundamentals of quantitative analysis',
-    'for real-world applications.',
-];
-
-const sponsors = [
-    {
-        id: 'colab',
-        name: 'COLAB',
-        logo: '/logo/colab_logo.png',
-        link: 'https://www.colabsoftware.com',
-    },
-    {
-        id: 'pelorus',
-        name: 'PELORUS',
-        logo: '/logo/pelorus.png',
-        link: 'https://www.pelorusvc.com/',
-    },
-
-    {
-        id: 'fmp',
-        name: 'FMP',
-        logo: '/logo/fmp_logo.png',
-        link: 'https://financialmodelingprep.com/',
-    },
-    {
-        id: 'cair',
-        name: 'CAIR',
-        logo: '/logo/cair_logo.png',
-        link: 'https://www.mun.ca/research/cair/',
-    },
-    {
-        id: 'ryco',
-        name: 'Ryo Financial',
-        logo: '/logo/logo-orig-white.svg',
-        link: 'https://www.ryco.ca/',
-    },
-    {
-        id: 'enaimco',
-        name: 'enaimco',
-        logo: '/logo/enaimco-logo.svg',
-        link: 'https://www.enaimco.com/',
-    },
-    {
-        id: 'cal_legrow',
-        name: 'CAL_LEGROW',
-        logo: '/logo/callegrow.png',
-        link: 'https://callegrow.com/',
-    },
-];
-
-const advisors = [
-    { logo: '/logo/blackrock-white.png', alt: 'BlackRock' },
-    { logo: '/logo/microsoft_logo.png', alt: 'Microsoft' },
-    { logo: '/logo/omers.png', alt: 'OMERS' },
-    { logo: '/logo/otpp.png', alt: 'OTPP' },
-    { logo: '/logo/soc_white_logo.png', alt: 'Société Générale' },
-];
-
-const panels = [
-    { title: 'ABOUT US', img: '/about_page/about_bg.jpg', txt: initialContent['ABOUT US'] },
-    { title: 'PROJECTS', img: '/about_page/teams.png', txt: initialContent['PROJECTS'] },
-    { title: 'SPEAKERS & NETWORKING', img: '/about_page/contact.jpg', txt: initialContent['SPEAKERS & NETWORKING'] },
-    { title: 'GET IN TOUCH!', img: '/about_page/web_hike.png', txt: initialContent['GET IN TOUCH!'] },
-];
 
 export default function AboutPage() {
-    const [mounted, setMounted] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
     const wordRefs = useRef<(HTMLSpanElement | null)[][]>([]);
-    const videoRef = useRef<HTMLVideoElement>(null);
     const [showHeroText, setShowHeroText] = useState(false);
 
     // Initialize word refs
     if (wordRefs.current.length !== animatedTextLines.length) {
-        wordRefs.current = animatedTextLines.map((line) => Array(line.split(' ').length).fill(null));
+        wordRefs.current = animatedTextLines.map((line) => { 
+            const words = line.split(' ').filter(Boolean)
+            return Array(words.length).fill(null);
+        });
     }
 
     useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    useEffect(() => {
-        if (!mounted) return;
         const timer = setTimeout(() => setShowHeroText(true), 1000);
         return () => clearTimeout(timer);
-    }, [mounted]);
+    }, []);
 
     useEffect(() => {
         const handler = () => {
@@ -125,20 +59,18 @@ export default function AboutPage() {
         return () => window.removeEventListener('scroll', handler);
     }, []);
 
-    if (!mounted) return null;
-
     return (
         <div className="about-page">
             {/* Hero Section */}
             <section className="hero-section">
-                <video ref={videoRef} autoPlay loop muted playsInline className="hero-video">
-                    <source src="/video/downtown.mp4" type="video/mp4" />
+                <video autoPlay loop muted playsInline className="hero-video">
+                    <source src={HERO_VIDEO_SRC} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <div className="main-title-container">
                     <h1 className="main-title">MUN QUANT SOCIETY</h1>
                     <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSeU9YmdLQMVuYfgZbiylYyQ80p9CHrWKPm2oo8xrhOGJNCJQA/viewform"
+                        href={JOIN_FORM_URL}
                         className="nav-link join-us hero-join-button"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -157,23 +89,34 @@ export default function AboutPage() {
             {/* Animated Text */}
             <section ref={sectionRef} className="animated-text-section">
                 <div className="animated-text-content">
-                    {animatedTextLines.map((line, li) => (
-                        <p key={li} className="animated-line">
-                            {line.split(' ').map((word, wi, arr) => (
-                                <React.Fragment key={wi}>
-                                    <span
-                                        ref={(el: HTMLSpanElement | null) => {
-                                            wordRefs.current[li][wi] = el;
-                                        }}
-                                        className="animated-word"
-                                    >
-                                        {word}
-                                    </span>
-                                    {wi < arr.length - 1 && ' '}
-                                </React.Fragment>
-                            ))}
-                        </p>
-                    ))}
+                    {animatedTextLines.map((line, li) => {
+                        const words = line.split(' ').filter(Boolean);
+                        if (words.length ===0) {
+                            return (
+                                <p key={li} className="animated-line">
+                                    &nbsp;
+                                </p>
+                            )
+                        }
+
+                            return (
+                                <p key={li} className="animated-line">
+                                    {words.map((word, wi, arr) => (
+                                        <React.Fragment key={wi}>
+                                            <span
+                                                ref={(el: HTMLSpanElement | null) => {
+                                                    wordRefs.current[li][wi] = el;
+                                                }}
+                                                className="animated-word"
+                                            >
+                                                {word}
+                                            </span>
+                                            {wi < arr.length - 1 && ' '}
+                                        </React.Fragment>
+                                    ))}
+                                </p>
+                            )    
+                        })} 
                 </div>
             </section>
 
@@ -233,7 +176,7 @@ export default function AboutPage() {
                 <div className="metabase-container">
                     <iframe
                         className="metabase-iframe"
-                        src="https://munquantsocietymetabase.online/public/dashboard/f334fe26-4b29-4d98-a148-7784981a57c1#theme=night&bordered=false&titled=false&refresh=60"
+                        src={METABASE_URL}
                         frameBorder={0}
                     ></iframe>
                 </div>

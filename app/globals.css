@@ -1,7 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
-
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/oswald/v56/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf')
+    format('truetype');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
