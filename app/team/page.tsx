@@ -1,16 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../style.css";
+import "./style.css";
 import Image from "next/image";
 
 const executiveMember = [
   // Executive Leadership
   {
-    name: "Joshua Kattapuram",
+    name: "Aaron Crane",
     role: "President",
-    linkedin: "https://www.linkedin.com/in/joshua-kattapuram/ ",
-    bio: "I'm a final year CS/Math student at MUN. I've worked on the trading desk at the Ontario Teacher's Pension Plan in Toronto. I also play Tennis and Piano!",
-    image: "/headshots/josh.JPG",
+    linkedin: "https://www.linkedin.com/in/aaroncranee/ ",
+    bio: "I'm a third-year Computer Engineering major with an interest in low-level programming and hardware systems. I enjoy working with C, Assembly, and direct hardware tools. In my freetime, I train and compete as a powerlifter.",
+    image: "/headshots/aaron2.JPG",
   },
   {
     name: "Ian Anobis",
@@ -19,13 +19,7 @@ const executiveMember = [
     bio: "My name is Ian, I am a CS student at MUN. I have a Bachelor's degree in Philosophy (Maj.) and Classics (Min.). I have served as an officer with the Royal Canadian Navy. Apart from finance my interests include world history and strategy games.",
     image: "/headshots/ian2.png",
   },
-  {
-    name: "Aaron Crane",
-    role: "Co-VP",
-    linkedin: "https://www.linkedin.com/in/aaroncranee/",
-    bio: "I'm a third-year Computer Engineering major with an interest in low-level programming and hardware systems. I enjoy working with C, Assembly, and direct hardware tools. In my freetime, I train and compete as a powerlifter.",
-    image: "/headshots/aaron2.jpg",
-  },
+
   {
     name: "Hameedah Salaam",
     role: "Co-VP & Co-Director of Website",
