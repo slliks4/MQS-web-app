@@ -5,7 +5,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./styles.css";
 import Image from 'next/image';
 import { generateEventsLayout, simplePastEvents, GridItemData, ArrowDirection } from "./eventsData";
-import { useMediaQuery } from "./useMediaQuery";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 function GridItem({ item, hoveredId, setHoveredId }: { item: GridItemData; hoveredId: string | null; setHoveredId: (id: string | null) => void; }) {
   const { type, event, arrow, row, col } = item;
