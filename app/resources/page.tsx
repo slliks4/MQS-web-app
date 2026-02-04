@@ -1,19 +1,62 @@
-import { myResources } from "@/constants"
-const Resources = ({
-    title,
-    description,
-    image,
-    href,
-    tags,
-    closeModal,
-}) => {
+import Image from "next/image"
+import './styles.css'
+import { myResources } from './index'
+
+const Resources = () => {
   return (
-    <div
-      className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
-      >
-        <div style={{ paddingLeft: '30px' }} className="flex justify-right">
-           <h1 className="text-4xl font-bold mb-5">Team Resources</h1>
+    <div className="min-h-screen bg-black">
+      <div className="container mx-auto px-6 py-12">
+        <div className="text-center mb-16">
+           <h1 className="text-5xl font-bold mb-6">Team Resources</h1>
+           <div>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Explore our teams and access shared resources. 
+              Each team has dedicated folders containing project documentation, 
+              research papers, code repositories, and meeting notes.
+            </p>
+           </div>
         </div>
+
+        <div className="card-container">
+          {myResources.map((resource) => (
+            <div key={resource.id} className="card">
+              <div className="card-header">
+                {resource.image && (
+                  <Image src={resource.image} alt={resource.title} className="card-image" />
+                )}
+                <h3 className="card-title">{resource.title}</h3>
+              </div>
+              
+              <div className="card-content">
+                <p className="card-description">{resource.description}</p>
+                
+                <div className="card-tags">
+                  {resource.tags && resource.tags.map((tag) => (
+                    <span key={tag.id} className="tag">
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {resource.href && (
+                <div className="card-footer text-center">
+                  <a href={resource.href} className="card-link">
+                    Access Team Drive
+                    <Image 
+                      src="/external-link.png" 
+                      alt="External link" 
+                      width={16} 
+                      height={16} 
+                      className="ml-2 filter invert"
+                    />
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
