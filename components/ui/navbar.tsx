@@ -66,6 +66,7 @@ export default function Navbar() {
           <Link href="/team" className="nav-link">EXECUTIVES</Link>
           <Link href="/articles" className="nav-link">PROJECTS</Link>
           <Link href="/events" className="nav-link">EVENTS</Link>
+          <Link href="/resources" className="nav-link">RESOURCES</Link>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeU9YmdLQMVuYfgZbiylYyQ80p9CHrWKPm2oo8xrhOGJNCJQA/viewform"
             className="nav-link join-us"
@@ -93,6 +94,7 @@ export default function Navbar() {
           </Link>
           <Link href="/articles" className="nav-link block" onClick={() => handleNavLinkClick('/articles')}>PROJECTS</Link>
           <Link href="/events" className="nav-link block" onClick={() => handleNavLinkClick('/events')}>EVENTS</Link>
+          <Link href="/resources" className="nav-link block" onClick={() => handleNavLinkClick('/resources')}>RESOURCES</Link>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeU9YmdLQMVuYfgZbiylYyQ80p9CHrWKPm2oo8xrhOGJNCJQA/viewform"
             className="nav-link join-us block"
