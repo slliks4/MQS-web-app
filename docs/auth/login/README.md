@@ -1,5 +1,16 @@
 # 🔐 Authentication – Login Documentation
 
+```md
+================================================================================
+Author: Skills Nwokolo Anthony  
+Email: skillsnwokolo372@gmail.com
+Role: System Design / Authentication Architecture  
+Version: 1.0.0  
+Last Updated: 2026-02-24  
+Status: Stable  
+================================================================================
+```
+
 ## 📌 Overview
 
 This document defines the functional and UI behavior of the Login flow.
@@ -137,7 +148,7 @@ Request Body:
 
 10. Frontend:
 
-    * Stores access token (memory or secure storage)
+    * Stores access token (memory)
     * Stores refresh token (HTTP-only cookie recommended)
     * Updates Auth Context
     * Redirects user to dashboard

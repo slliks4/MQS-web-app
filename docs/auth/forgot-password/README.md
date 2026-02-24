@@ -1,5 +1,16 @@
 # 🔐 Authentication – Forgot Password Flow
 
+```md
+================================================================================
+Author: Skills Nwokolo Anthony  
+Email: skillsnwokolo372@gmail.com
+Role: System Design / Authentication Architecture  
+Version: 1.0.0  
+Last Updated: 2026-02-24  
+Status: Stable  
+================================================================================
+```
+
 ---
 
 # 📌 Overview
